@@ -35,7 +35,15 @@ function PhoneMockup() {
   }, [])
 
   const convo = conversations[index]
-  const time = new Date().toLocaleTimeString('en-NG', { hour: '2-digit', minute: '2-digit' })
+  const [time, setTime] = useState<string>('')
+
+  useEffect(() => {
+    setTime(new Date().toLocaleTimeString('en-NG', { hour: '2-digit', minute: '2-digit' }))
+    const tick = setInterval(() => {
+      setTime(new Date().toLocaleTimeString('en-NG', { hour: '2-digit', minute: '2-digit' }))
+    }, 60_000)
+    return () => clearInterval(tick)
+  }, [])
 
   return (
     <div className="relative flex justify-center">
@@ -66,7 +74,7 @@ function PhoneMockup() {
             }`}>
               <div className="bg-[#dcf8c6] self-end ml-auto max-w-[85%] px-3 py-2 rounded-lg rounded-tr-none text-xs leading-relaxed">
                 {convo.user}
-                <p className="text-[10px] text-gray-400 text-right mt-1">{time} ✓✓</p>
+                <p className="text-[10px] text-gray-400 text-right mt-1">{time ? `${time} ✓✓` : ''}</p>
               </div>
             </div>
 
@@ -76,7 +84,7 @@ function PhoneMockup() {
             }`}>
               <div className="bg-white max-w-[85%] px-3 py-2 rounded-lg rounded-tl-none text-xs leading-relaxed whitespace-pre-line">
                 {convo.bot}
-                <p className="text-[10px] text-gray-400 text-right mt-1">{time}</p>
+                <p className="text-[10px] text-gray-400 text-right mt-1">{time || ''}</p>
               </div>
             </div>
           </div>
