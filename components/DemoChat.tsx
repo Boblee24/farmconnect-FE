@@ -33,11 +33,11 @@ export default function DemoChat() {
   const [shown, setShown] = useState<number>(0)
 
   useEffect(() => {
-    setShown(0)
     const messages = demos[active]
     messages.forEach((_, i) => {
       setTimeout(() => setShown(i + 1), i * 700)
     })
+    return () => setShown(0)
   }, [active])
 
   const time = new Date().toLocaleTimeString('en-NG', { hour: '2-digit', minute: '2-digit' })

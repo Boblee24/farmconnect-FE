@@ -28,7 +28,7 @@ export default function Nav() {
             { label: 'Markets', href: '#crops' },
           ].map(link => (
             <li key={link.href}>
-              
+              <a
                 href={link.href}
                 className="text-bark hover:text-leaf transition-colors text-sm font-medium"
               >
@@ -37,7 +37,7 @@ export default function Nav() {
             </li>
           ))}
           <li>
-            
+            <a
               href="https://wa.me/14155238886?text=hello"
               target="_blank"
               rel="noopener noreferrer"
