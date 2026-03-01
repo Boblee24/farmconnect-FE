@@ -55,8 +55,8 @@ useEffect(() => {
       <span className="absolute -right-2 bottom-20 text-4xl opacity-15 animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }}>🍅</span>
       <span className="absolute -left-4 top-24 text-3xl opacity-15 animate-bounce" style={{ animationDuration: '5s', animationDelay: '2s' }}>🌾</span>
 
-      <div className="relative z-10 w-[260px] bg-[#1a1a1a] rounded-[44px] p-3 shadow-2xl">
-        <div className="bg-[#ece5dd] rounded-[34px] overflow-hidden h-[520px] flex flex-col">
+      <div className="relative z-10 w-65 bg-[#1a1a1a] rounded-[44px] p-3 shadow-2xl">
+        <div className="bg-[#ece5dd] rounded-[34px] overflow-hidden h-130 flex flex-col">
           {/* Header */}
           <div className="bg-[#075e54] px-4 py-3 flex items-center gap-3">
             <div className="w-9 h-9 rounded-full bg-lime flex items-center justify-center text-lg">🌾</div>

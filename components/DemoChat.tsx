@@ -89,7 +89,7 @@ export default function DemoChat() {
             </div>
           </div>
 
-          <div className="p-4 space-y-3 min-h-[380px] flex flex-col justify-end">
+          <div className="p-4 space-y-3 min-h-95 flex flex-col justify-end">
             {demos[active].slice(0, shown).map((msg, i) => (
               <div
                 key={`${active}-${i}`}
