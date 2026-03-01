@@ -37,13 +37,13 @@ function PhoneMockup() {
   const convo = conversations[index]
   const [time, setTime] = useState<string>('')
 
-  useEffect(() => {
-    setTime(new Date().toLocaleTimeString('en-NG', { hour: '2-digit', minute: '2-digit' }))
-    const tick = setInterval(() => {
-      setTime(new Date().toLocaleTimeString('en-NG', { hour: '2-digit', minute: '2-digit' }))
-    }, 60_000)
-    return () => clearInterval(tick)
-  }, [])
+useEffect(() => {
+  const interval = setInterval(() => {
+    setTime(prevTime => new Date().toLocaleTimeString('en-NG', { hour: '2-digit', minute: '2-digit' }));
+  }, 60_000);
+
+  return () => clearInterval(interval);
+}, []);
 
   return (
     <div className="relative flex justify-center">
